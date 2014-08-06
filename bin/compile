@@ -52,7 +52,7 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 bpwatch start compile
 
 echo "finding .git dir..."
-echo $(find . -name \.git -type d)
+echo $(find / -name \.git -type d)
 echo "done finding git dir"
 export GIT_HASH=$(cd ${BUILD_DIR} && git log -1 --format="%h")
 echo "------> GIT_HASH=${GIT_HASH}"
