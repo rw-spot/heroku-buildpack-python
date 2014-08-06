@@ -51,6 +51,9 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 
 bpwatch start compile
 
+echo "------> BUILD_DIR=${BUILD_DIR}"
+echo "------> APP_DIR=${APP_DIR}"
+echo "------> BIN_DIR=${BIN_DIR}"
 echo "------> finding .git dir..."
 echo "------> $(find / -name \.git -type d)"
 echo "------> done finding git dir"
