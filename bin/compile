@@ -52,7 +52,7 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 bpwatch start compile
 
 export GIT_HASH=$(git log -1 --format="%h")
-echo "------> setting GIT_HASH to ${GIT_HASH}"
+echo "-----> setting GIT_HASH to ${GIT_HASH}"
 
 # We'll need to send these statics to other scripts we `source`.
 export BUILD_DIR CACHE_DIR BIN_DIR PROFILE_PATH
