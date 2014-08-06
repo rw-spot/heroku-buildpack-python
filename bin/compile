@@ -58,7 +58,7 @@ echo "------> pwd=$(pwd)"
 echo "------> finding .git dir..."
 echo "------> $(find / -name \.git -type d)"
 echo "------> done finding git dir"
-export GIT_HASH=$(cd ${BUILD_DIR} && git log -1 --format="%h")
+export GIT_HASH=$(git log -1 --format="%h")
 echo "------> GIT_HASH=${GIT_HASH}"
 
 # We'll need to send these statics to other scripts we `source`.
