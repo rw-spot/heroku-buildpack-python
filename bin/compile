@@ -51,6 +51,8 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 
 bpwatch start compile
 
+export GIT_HASH=$(cd ${BUILD_DIR} && git log -1 --format="%h")
+echo "------> GIT_HASH=${GIT_HASH}"
 
 # We'll need to send these statics to other scripts we `source`.
 export BUILD_DIR CACHE_DIR BIN_DIR PROFILE_PATH
@@ -263,6 +265,7 @@ set-env PYTHONUNBUFFERED true
 set-env PYTHONHOME /app/.heroku/python
 set-env LIBRARY_PATH /app/.heroku/vendor/lib:/app/.heroku/python/lib
 set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:/app/wheelhouse_lib:$LD_LIBRARY_PATH'
+set-env GIT_HASH=${GIT_HASH}
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
