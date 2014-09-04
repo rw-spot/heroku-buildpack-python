@@ -18,6 +18,9 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 echo "-----> called with ${1} ${2} ${3}"
+echo "-----> $(file ${1}/.git)"
+echo "-----> $(file ${2}/.git)"
+echo "-----> $(file ${3}/.git)"
 
 CACHED_DIRS=".heroku"
 
