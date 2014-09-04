@@ -1,0 +1,1 @@
+echo "git version is `git log -1`"
