@@ -50,7 +50,7 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 
 bpwatch start compile
 
-find .git -type d
+find . -name .git -type d
 
 export GIT_HASH=$(cd $ROOT_DIR && git log -1 --format="%h")
 echo "-----> setting GIT_HASH to ${GIT_HASH}"
