@@ -17,13 +17,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "-----> called with ${1} ${2} ${3}"
-echo "-----> $(file ${BIN_DIR}/.git)"
-echo "-----> $(file ${ROOT_DIR}/.git)"
-echo "-----> $(file ${1}/.git)"
-echo "-----> $(file ${2}/.git)"
-echo "-----> $(file ${3}/.git)"
-
 CACHED_DIRS=".heroku"
 
 # Static configurations for virtualenv caches.
@@ -57,7 +50,7 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 
 bpwatch start compile
 
-export GIT_HASH=$(git log -1 --format="%h")
+export GIT_HASH=$(cd $ROOT_DIR && git log -1 --format="%h")
 echo "-----> setting GIT_HASH to ${GIT_HASH}"
 
 # We'll need to send these statics to other scripts we `source`.
