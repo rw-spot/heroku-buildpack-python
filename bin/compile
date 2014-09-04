@@ -51,7 +51,7 @@ TMP_APP_DIR=$CACHE_DIR/tmp_app_dir
 bpwatch start compile
 
 export RELEASE_DATETIME=$(date +"%Y-%M-%dT%H:%M:%SZ")
-export RELEASE_SHA1SUM=$(find /app -type f -print0 | xargs -0 sha1sum | sha1sum | cut -d\  -f1)
+export RELEASE_SHA1SUM=$(find /app -type f -print0 | xargs -0 sha1sum | sha1sum | cut -d\  -f1 | cut -c -6)
 export RELEASE_FINGERPRINT="${RELEASE_DATETIME}--${RELEASE_SHA1SUM}"
 echo "-----> setting RELEASE_DATETIME to ${RELEASE_DATETIME}"
 echo "-----> setting RELEASE_SHA1SUM to ${RELEASE_SHA1SUM}"
