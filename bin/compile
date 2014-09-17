@@ -250,6 +250,7 @@ puts-step "Installing dependencies with pip"
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
 
 # Set LD_LIBRARY_PATH before `pip install`, so that shared libraries in wheelhouse_lib are found:
+export LD_LIBRARY_PATH="/app/.heroku/vendor/lib:/app/.heroku/python/lib:/app/wheelhouse_lib:${LD_LIBRARY_PATH}"
 set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:/app/wheelhouse_lib:$LD_LIBRARY_PATH'
 
 /app/.heroku/python/bin/pip install -r requirements.txt --use-wheel --find-links=/app/wheelhouse --exists-action=w --src=./.heroku/src --allow-all-external  | cleanup | indent
